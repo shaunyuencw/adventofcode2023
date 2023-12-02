@@ -1,5 +1,4 @@
-
-## Initial Approach
+# Initial Approach
 The primary challenge addressed in this script is the handling of overlapping number words within a text, such as in cases like:
 
 `oneight, threeight, eightwo, eighthree`
@@ -26,7 +25,7 @@ To effectively manage this, the script follows a multi-step process:
 
 This approach ensures an accurate transformation of strings, like converting `175rpdmxfeightwos` to `175rpdmxfeigh2s`.
 
-## Optimized Approach Using Bidirectional Pointer Technique
+# Optimized Approach Using Bidirectional Pointer Technique
 
 To handle complex cases like oneight and eightwo where number words overlap, the script uses a bidirectional pointer technique. This efficient method simultaneously scans each line from both ends:
 

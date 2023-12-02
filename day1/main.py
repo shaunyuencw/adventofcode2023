@@ -54,15 +54,16 @@ with open('input.txt', 'r') as file:
 
         ans += num
 
-        # combination = ["eightwo", "threeight", "eighthree", "oneight"]
+        combination = ["eightwo", "threeight", "eighthree", "oneight"]
 
-        # for c in combination:
-        #     if c in line:
-        #         print(f"Line {i}: {line}")
-        #         print(f"CHECK: {c}")
-        #         print(f"Replaced: {rline}")
-        #         print(f"Number: {num}")
-        #         print()
+        for c in combination:
+            if c in line:
+                print(f"Line {i}: {line}")
+                print(f"CHECK: {c}")
+                print(f"Replaced: {rline}")
+                print(f"Found matches: {found_matches}")
+                print(f"Number: {num}")
+                print()
 
         i += 1
 
