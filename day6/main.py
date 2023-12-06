@@ -1,28 +1,16 @@
 import time
 def calculate_ways_to_beat(race_time, record):
-    ways_to_beat = 0
-    max_holding_time = race_time // 2
-
-    # Iterate up to the midpoint
-    for hold_time in range(1, max_holding_time): # Does not include the midpoint
-        my_distance = (race_time - hold_time) * hold_time
-        if my_distance > record:
-            ways_to_beat += 2  # Counting for both this time and its symmetrical counterpart
-
-    # Calculate the midpoint distance
-    midpoint_distance = max_holding_time * (race_time - max_holding_time)
-
-    # Adjust for the midpoint
-    if (race_time + 1) % 2 == 0:
-        # Even race time: if the midpoint beats the record, add 2 (for both midpoints)
-        if midpoint_distance > record:
-            ways_to_beat += 2
-    else:
-        # Odd race time: if the midpoint beats the record, add 1
-        if midpoint_distance > record:
-            ways_to_beat += 1
-
-    return ways_to_beat
+    # Calculate the square root part of the quadratic formula
+    sqrt = ((((race_time / 2) ** 2) - record) ** 0.5)
+    
+    # Calculate the upper and lower bounds of hold times that beat the record
+    upper_bound = int(sqrt + race_time / 2)
+    lower_bound = int(race_time / 2 - sqrt)
+    
+    # Calculate the number of ways to beat the record by finding the range between upper_bound and lower_bound
+    number_of_ways = upper_bound - lower_bound
+    
+    return number_of_ways
 
 part1, part2 = 1, 0
 time_list = []

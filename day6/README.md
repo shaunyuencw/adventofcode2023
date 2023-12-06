@@ -1,18 +1,16 @@
 
 # Approach
 
-In tackling the boat race challenge from the Island Island puzzle, I focused on efficiency and strategic thinking. The task involved figuring out the number of ways to exceed the record distances in various boat races, considering the unique mechanics of race time and button holding dynamics.
 
+## Naive Linear Approach
+-   **Iterative Checking**: Calculated possible distances for each millisecond the button was held down within the first half of the race time.
+-   **Symmetry Exploitation**: Utilized the symmetry of the distance-time relationship to double the count of possible solutions.
+-   **Midpoint Adjustment**: Included special handling for the midpoint in cases of even total race time to account for the distinct behavior at this critical point.
 
-## Key Strategies
-
-1.  **Avoiding Brute Force**: The brute force approach was deemed highly inefficient due to the extensive range of possibilities in each race. This necessitated a more refined strategy.
-    
-2.  **First Half Processing**: Recognizing that only the first half of each race time was critical, I focused on this segment to avoid unnecessary calculations beyond the midpoint, where potential distances start decreasing.
-    
-3.  **Symmetry Utilization**: The problem presented a symmetrical pattern in distance calculations. Leveraging this symmetry, I effectively doubled the count of viable solutions, enhancing efficiency.
-    
-4.  **Midpoint Handling**: Differentiating between odd and even race times, especially around the midpoint, was crucial for ensuring accuracy in all race scenarios.
+## Optimized Constant Time Approach
+-   **Quadratic Insight**: Recognized that the problem could be modeled by a quadratic equation, allowing for the application of algebraic optimization.
+-   **Root Analysis**: Calculated the roots of the quadratic equation to find the exact bounds of button hold times that surpass the record distance, eliminating the need for iteration.
+-   **Direct Computation**: Computed the number of ways to beat the record by directly subtracting the lower bound from the upper bound, thus achieving constant time complexity.
 
 # --- Day 6: Wait For It ---
 
