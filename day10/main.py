@@ -36,6 +36,17 @@ def get_possible_directions_from_start(matrix, start):
                 possible_directions.append(dir)
     return possible_directions
 
+def get_starting_pipe(possible_directions):
+    assert len(possible_directions) == 2, "There should be exactly two possible directions."
+    # Create a set for easy comparison
+    possible_set = set(possible_directions)
+    # Iterate through the pipes dictionary to find a match
+    for pipe, directions in pipes.items():
+        if possible_set == set(directions.values()):
+            return pipe
+    # If no match is found, return an error or a default value
+    return 'Error: No matching pipe found'
+
 def find_loop():
     is_part_of_loop = [['.' for _ in row] for row in matrix]
     
@@ -45,8 +56,13 @@ def find_loop():
 
     # Determine the initial direction from the start position
     initial_directions = get_possible_directions_from_start(matrix, current_pos)
+    try:
+        start_pipe = get_starting_pipe(initial_directions)
+    except:
+        print(f"Invalid Input")
+        return -1, None
 
-    is_part_of_loop[start[0]][start[1]] = 'L' # I'm lazy so manually identify
+    is_part_of_loop[start[0]][start[1]] = start_pipe # I'm lazy so manually identify
     next_dir = initial_directions[0] # Arbitrarily pick the first direction
 
     while True:        
