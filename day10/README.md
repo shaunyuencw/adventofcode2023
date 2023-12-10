@@ -29,28 +29,6 @@ Through this methodical process, I managed to not only trace the full extent of 
 
 In my journey to solve the "Day 10: Pipe Maze" puzzle, I employed a systematic approach that combined computational geometry and search algorithms to effectively handle the problem's spatial complexity.
 
-## Part 1: Tracing the Loop
-
-The first challenge was to identify and trace the loop formed by the pipes, starting from a designated 'S' tile. Here's how I approached it:
-
--   **Pipe Mapper**: I began by creating a map for all the pipe types, detailing the entry and exit points for each. This was crucial in understanding the loop's path. For instance, entering an 'L' pipe from the south meant you would exit eastward.
-    
--   **Loop Trace**: Knowing that the loop was valid and continuous, I searched for the two pipes that connected to the starting position. From there, I picked one direction arbitrarily and followed the path dictated by the pipe mapper. I repeated this process until I circled back to the 'S' tile.
-    
--   **Path Length**: The loop's furthest point from the starting position was calculated by counting the steps taken along the path and then dividing by two, since each step in the original grid translated to two steps in my trace.
-    
-
-## Part 2: Expanding the Resolution
-
-The second part required a clever manipulation of the grid to account for the possibility of the creature squeezing through narrow spaces between pipes:
-
--   **Resolution Enhancement**: I doubled the grid's resolution, transforming each cell into a 2x2 cell. This effectively scaled up the grid, providing clarity on the gaps between pipes.
-    
--   **Flood Fill Algorithm**: With the enhanced grid, I implemented a flood fill algorithm from the edges to mark the exterior cells. This helped identify the outside boundaries and distinguished them from the interior cells.
-    
--   **Interior Cell Count**: The final step involved counting the remaining isolated interior cells. A cell was considered valid if its entire 2x2 representation was unmarked, indicating it was fully enclosed by the loop.
-    
-
 Through this methodical process, I managed to not only trace the full extent of the pipe loop but also determine the area within it, revealing potential nesting sites for the elusive creature.
 
 # --- Day 10: Pipe Maze ---
