@@ -62,7 +62,7 @@ def find_loop():
         print(f"Invalid Input")
         return -1, None
 
-    is_part_of_loop[start[0]][start[1]] = start_pipe # I'm lazy so manually identify
+    is_part_of_loop[start[0]][start[1]] = start_pipe
     next_dir = initial_directions[0] # Arbitrarily pick the first direction
 
     while True:        
