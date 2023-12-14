@@ -36,7 +36,7 @@ def main():
     output_file = 'input.txt'
 
     if clone_folder('template', f"day{folder_name}"):
-        os.chdir(folder_name)
+        os.chdir(f"day{folder_name}")
         download_file(session, url, output_file)
 
 if __name__ == "__main__":
