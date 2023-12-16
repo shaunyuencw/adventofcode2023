@@ -53,7 +53,7 @@ def weigh_load(matrix):
     """ Calculate the weight load of a matrix. """
     return sum((len(matrix) - i) * line.count('O') for i, line in enumerate(matrix))
 
-def detect_pattern(sequence, confirmation_repeats=3):
+def detect_pattern(sequence, confirmation_repeats=2):
     """ Detects repeating patterns in a sequence. """
     for start in range(len(sequence)):
         for length in range(1, len(sequence) - start):
@@ -86,7 +86,7 @@ total_iterations = 1_000_000_000
 for i in range(total_iterations):
     matrix = four_direction_tilt(matrix)
     weight_history.append(weigh_load(matrix))
-    if i % 500 == 0 or i == total_iterations - 1:
+    if i % 20 == 0 or i == total_iterations - 1:
         start, length = detect_pattern(weight_history)
         if start is not None: # Pattern confirmed 4 times
             print(f"Pattern detected starting at index {start} with a length of {length}")
