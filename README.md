@@ -24,3 +24,4 @@ Each day's folder has a detailed explanation of my approach.
 | Day 13 | Point of Incidence | Developed method for spatial symmetry analysis in patterns, with adaptability for single smudges in pattern recognition | 🌕🌑🌑🌑🌑 (1/5) | ⭐️⭐️☆☆☆ (2/5) |
 | Day 14 | Parabolic Reflector Dish | Matrix manipulation and pattern recognition for efficient management of a complex, repetitive process | 🌕🌕🌘🌑🌑 (2.25/5) | ⭐️⭐️⭐️⭐️☆ (4/5) |
 | Day 15 | Lens Library | Custom hash function with data management techniques for lens collection management | 🌕🌑🌑🌑🌑 (1/5) | ⭐️⭐️☆☆☆ (2/5) |
+| Day 16 | The Floor Will Be Lava | Navigation of light beam through a grid of mirrors and splitters, maximizing energized tiles and optimizing computation with multiprocessing | 🌕🌗🌑🌑🌑 (1.5/5) | ⭐️⭐️⭐️☆☆ (3/5) |
